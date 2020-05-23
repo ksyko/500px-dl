@@ -3,7 +3,9 @@
 ### Prerequisites
 
 [python3](https://www.python.org/downloads/)
+
 [requests_html](https://github.com/psf/requests-html)
+
 requests: pip install requests
 
 ### Installation
