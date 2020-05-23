@@ -1,4 +1,5 @@
-[![GPL-3.0 License][license-shield]][license-url]
+## License
+[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 Usage:
 500px-dl.py url1 url2
