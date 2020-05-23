@@ -1,7 +1,8 @@
-import requests
-from pathlib import Path
-from requests_html import HTMLSession
 import sys
+from pathlib import Path
+
+import requests
+from requests_html import HTMLSession
 
 session = HTMLSession()
 session.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'})
@@ -16,6 +17,7 @@ def get_photo(photo_id):
     photo_resp = requests.get(photo_page)
     photo_json = photo_resp.json()["photos"]
     photo = parse_photo_json(photo_json[photo_id])
+    print('Downloading {}'.format(photo.name))
     download_photo(photo)
 
 
@@ -103,5 +105,5 @@ class Photo:
         self.author = author
 
 
-for arg in sys.argv:
+for arg in sys.argv[1:]:
     let_it_rip(arg)
