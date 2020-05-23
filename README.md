@@ -14,8 +14,9 @@ git clone https://github.com/ksyko/500px-dl.git
 ```
 
 ## Usage
-python 500px-dl.py url1 url2
-Single images, collections and author pages are supported
+
+Single images, collections and author pages are supported <br>
+python 500px-dl.py url1 url2 
 
 ## License
 
