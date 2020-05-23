@@ -86,14 +86,15 @@ def get_user_id(url):
 
 
 def let_it_rip(url):
-    if "/galleries/" in url:
-        user_id = get_user_id(url)
-        get_gallery(user_id, Path(url).stem)
-    elif "500px.com/photo/" in url:
-        get_photo(url.split("/")[4])
-    elif url.count("/") == 3:
-        user_id = get_user_id(url)
-        get_photos(user_id)
+    if "500px.com/" in url:
+        if "/galleries/" in url:
+            user_id = get_user_id(url)
+            get_gallery(user_id, Path(url).stem)
+        elif "/photo/" in url:
+            get_photo(url.split("/")[4])
+        elif url.count("/") == 3:
+            user_id = get_user_id(url)
+            get_photos(user_id)
     else:
         print("Skipped {}".format(url))
 
