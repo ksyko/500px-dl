@@ -4,6 +4,8 @@ from pathlib import Path
 import requests
 from requests_html import HTMLSession
 
+script_dir = Path(__file__).parent.resolve()
+
 session = HTMLSession()
 session.headers.update({'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0'})
 photos_api_url = "https://api.500px.com/v1/photos?feature=user&stream=photos&user_id={}&include_states=false&image_size[]=2048&page={}&rpp=100"
@@ -58,7 +60,7 @@ def download_photo(photo, folder=None):
         folder = ""
     else:
         folder = "_Gallery/" + folder
-    dir_name = "K:/ksy/500px-dl/Downloads/{}".format(folder)
+    dir_name = "{}/Downloads/{}".format(script_dir, folder)
     file_name = "/{}_{}.{}".format(photo.name, str(photo.id_), photo.format_)
     if Path(dir_name + file_name).exists():
         print("Skipping {} - Already exists".format(photo.name))
