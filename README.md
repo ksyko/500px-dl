@@ -1,4 +1,4 @@
-[![GCU License][license-shield]][license-url]
+[![GPL-3.0 License][license-shield]][license-url]
 
 Usage:
 500px-dl.py url1 url2
